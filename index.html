@@ -10,7 +10,7 @@
         <link href="http://fonts.googleapis.com/css?family=Tangerine:400,700" media="screen" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="resources/css/main.css">
     </head>
-    <body ng-controller="ReservationController">
+    <body>
         <div class="container">
             <div class="row">
                 <header class="twelve columns">
@@ -21,7 +21,7 @@
                  <div class="six columns centered">
                     <div class="form-wrapper">
                         <h3>Enter a Reservation</h3>
-                        <form>
+                        <form ng-controller="ReservationController">
                             <input type="text" name="customer" ng-model="reservation.customer" placeholder="Name" />
                             <input type="tel" name="phone" ng-model="reservation.phone" placeholder="Phone Number" />
                             <input type="text" name="howMany" ng-model="reservation.howMany" placeholder="Number in Party" />

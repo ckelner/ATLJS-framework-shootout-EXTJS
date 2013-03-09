@@ -9,11 +9,10 @@ function ReservationController($scope) {
 		} else {
 			$scope.reservations = [];
 		}
-		var res = angular.copy(reservation);
 		$scope.reservations.push({
-            customer: res.customer,
-            howMany: res.howMany,
-            phone: res.phone
+            customer: reservation.customer,
+            howMany: reservation.howMany,
+            phone: reservation.phone
         });
         localStorage.reservations = JSON.stringify($scope.reservations);
 
