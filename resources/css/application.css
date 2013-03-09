@@ -3,6 +3,17 @@ html {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+#me{
+	position: absolute;
+	left: 20px;
+	top: 0px;
+	height: 10px;
+	width: 10px;
+}
+.pending-slot:hover .hidden{
+	display: block;
+}
+
 html html {
   font-size: 112.5%;
   line-height: 1.5em;

@@ -178,5 +178,12 @@
         <script src="resources/js/angular.min.js"></script>
         <script src="app.js"></script>
         <script src="resources/js/controllers.js"></script>
-    </body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+		<script>
+			$(".pending-slot").click(function(){
+				$(this).parent().hide();
+			});
+		</script>
+	</body>
 </html>
