@@ -1,22 +1,19 @@
-'use strict';
-
-/* Controllers */
-
-function PhoneListCtrl($scope, Phone) {
-  $scope.phones = Phone.query();
-  $scope.orderProp = 'age';
-}
-
-//PhoneListCtrl.$inject = ['$scope', 'Phone'];
-
-
-
-function PhoneDetailCtrl($scope, $routeParams, Phone) {
-  $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-    $scope.mainImageUrl = phone.images[0];
-  });
-
-  $scope.setImage = function(imageUrl) {
-    $scope.mainImageUrl = imageUrl;
-  }
+function ReservationController($scope) {
+ 	$scope.reservations = [];
+ 	$scope.customer = "";
+ 	$scope.howMany = "";
+    $scope.phone = "";
+	$scope.addReservation = function() {
+		$scope.reservations.push({
+            /*customer: $scope.customer,
+            howMany: $scope.howMany,
+            phone: $scope.phone*/
+            customer: "test",
+            howMany: "12",
+            phone: "12345678"
+        });
+        $scope.customer="test";
+        $scope.howMany= "12";
+        $scope.phone= "12345678";
+	}
 }
