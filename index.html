@@ -22,10 +22,13 @@
                  <div class="six columns centered">
                     <div class="form-wrapper">
                         <h3>Enter a Reservation</h3>
-                        <form ng-controller="ReservationController">
-                            <input type="text" name="customer" ng-model="reservation.customer" placeholder="Name" />
-                            <input type="tel" name="phone" ng-model="reservation.phone" placeholder="Phone Number" />
-                            <input type="text" name="howMany" ng-model="reservation.howMany" placeholder="Number in Party" />
+                        <form name="reservationForm" ng-controller="ReservationController">
+                            <input type="text" name="customer" ng-model="reservation.customer" placeholder="Name" required />
+                            <span class="error" ng-show="reservationForm.customer.$error.required" style="color:red;">Required!</span>
+                            <input type="tel" name="phone" ng-model="reservation.phone" placeholder="Phone Number" required />
+                            <span class="error" ng-show="reservationForm.phone.$error.required" style="color:red;">Required!</span>
+                            <input type="text" name="howMany" ng-model="reservation.howMany" placeholder="Number in Party" required />
+                            <span class="error" ng-show="reservationForm.howMany.$error.required" style="color:red;">Required!</span>
                             <button type="submit" class="button radius medium eight columns offset-by-four" 
                                 ng-click="addReservation(reservation)">
                                 Add Reservation
