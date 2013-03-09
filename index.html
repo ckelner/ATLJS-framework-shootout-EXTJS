@@ -11,13 +11,35 @@
         <link rel="stylesheet" type="text/css" href="resources/css/main.css">
     </head>
     <body ng-controller="ReservationController">
-        <button ng-click="addReservation()">Reservation!</button>
-        <p>customer: {{customer}}</p>
+        <div class="container">
+            <div class="row">
+                <header class="twelve columns">
+                    js bistro
+                </header>
+            </div>  
+            <div class="row">
+                 <div class="six columns centered">
+                    <div class="form-wrapper">
+                        <h3>Enter a Reservation</h3>
+                        <form>
+                            <input type="text" name="customer" ng-model="reservation.customer" placeholder="Name" />
+                            <input type="tel" name="phone" ng-model="reservation.phone" placeholder="Phone Number" />
+                            <input type="text" name="howMany" ng-model="reservation.howMany" placeholder="Number in Party" />
+                            <button type="submit" class="button radius medium eight columns offset-by-four" 
+                                ng-click="addReservation(reservation)">
+                                Add Reservation
+                            </button>
+                        </form>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- <p>customer: {{customer}}</p>
         <br>
         <p>howMany: {{howMany}}</p>
         <br>
         <p>phone: {{phone}}</p>
-        <br>
+        <br>-->
         <script src="resources/js/angular.min.js"></script>
         <script src="app.js"></script>
         <script src="resources/js/controllers.js"></script>

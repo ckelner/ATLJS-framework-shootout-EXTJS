@@ -3,23 +3,19 @@ function ReservationController($scope) {
  	$scope.customer = "";
  	$scope.howMany = "";
     $scope.phone = "";
-	$scope.addReservation = function() {
+	$scope.addReservation = function(reservation) {
 		if(localStorage.reservations!="") {
 			$scope.reservations = JSON.parse(localStorage.reservations);
 		} else {
 			$scope.reservations = [];
 		}
+		var res = angular.copy(reservation);
 		$scope.reservations.push({
-            /*customer: $scope.customer,
-            howMany: $scope.howMany,
-            phone: $scope.phone*/
-            customer: "test",
-            howMany: "12",
-            phone: "12345678"
+            customer: res.customer,
+            howMany: res.howMany,
+            phone: res.phone
         });
         localStorage.reservations = JSON.stringify($scope.reservations);
-        $scope.customer="test";
-        $scope.howMany= "12";
-        $scope.phone= "12345678";
+
 	}
 }
